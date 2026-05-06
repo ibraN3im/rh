@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>هدية النجاح - لحبيبتي</title>
+    <!-- Google Fonts: خطوط عصرية وجميلة -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 (مجانية) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(145deg, #fff5f0 0%, #ffe8e0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* تأثير قلوب خفيفة في الخلفية */
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart-bg i {
+            position: absolute;
+            color: rgba(255, 160, 122, 0.15);
+            font-size: 1.8rem;
+            animation: floatHeart 12s infinite linear;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* البطاقة الرئيسية */
+        .card {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 30px 45px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* رأس البطاقة (صورة الحبيبة) */
+        .hero-image {
+            width: 100%;
+            background: #fdeae3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px 20px 20px;
+            border-bottom: 4px solid #ffb38b;
+            position: relative;
+        }
+
+        .image-frame {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd7b5, #ffb48a);
+            padding: 6px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: #fff;
+        }
+
+
+        @keyframes gentleBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* محتوى الرسائل */
+        .content {
+            padding: 30px 28px 40px;
+            text-align: center;
+        }
+
+        .greeting {
+            margin-bottom: 8px;
+        }
+
+        .greeting h6 {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ca5310;
+            letter-spacing: -0.5px;
+            padding-bottom: 6px;
+        }
+
+        .congrats {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #a55820;
+            margin: 8px 0 10px;
+            background: #fff0e6;
+            display: inline-block;
+            padding: 8px;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 3px #ffd6be, 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .message {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #4f2d18;
+            background: #fffaf5;
+            padding: 20px;
+            border-radius: 48px;
+            margin: 8px 0 15px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+            border: 1px solid #ffe1ce;
+        }
+
+        .message i {
+            color: #ff8c42;
+            margin: 0 4px;
+        }
+
+        .gift-box {
+            background: linear-gradient(115deg, #fff2e6, #ffe4d4);
+            border-radius: 60px;
+            padding: 20px 15px;
+            margin: 8px 0 15px;
+            border: 1px solid #ffcba3;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+        }
+
+        .gift-box i {
+            font-size: 1rem;
+            color: #e07c2c;
+            background: white;
+            padding: 8px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 8px;
+        }
+
+        .gift-box p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #b6551a;
+        }
+
+        .gift-box .small-ring {
+            font-size: 14px;
+            font-weight: bold;
+            background: #ffdbb5;
+            padding: 4px;
+            border-radius: 50px;
+            margin-top: 12px;
+            color: #a5430e;
+        }
+
+        .engagement-promise {
+            background: #fff2e0;
+            padding: 16px 6px;
+            border-radius: 50px;
+            margin: 10px 0 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #aa4c1c;
+            border-right: 8px solid #ffb76e;
+            border-left: 8px solid #ffb76e;
+        }
+
+        .engagement-promise i {
+            margin: 0 6px;
+            color: #ffa047;
+        }
+
+        .btn-sparkle {
+            background: #eb8c4a;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 80px;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 18px rgba(235, 140, 74, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-sparkle:hover {
+            background: #da7836;
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(235, 140, 74, 0.4);
+        }
+
+        /* تذييل خفيف */
+        .footer-note {
+            background: #fbe8df;
+            padding: 12px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #bf7a48;
+            border-top: 1px solid #ffcfb0;
+        }
+
+        @media (max-width: 550px) {
+
+
+            .image-frame {
+                width: 170px;
+                height: 170px;
+            }
+
+            .greeting h2 {
+                font-size: 1.4rem;
+            }
+
+            .congrats {
+                font-size: 14px;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+        }
+
+        /* شرارة صغيرة */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            background: radial-gradient(circle, gold, orange);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: sparkleFly 0.8s forwards;
+            z-index: 9999;
+        }
+
+        @keyframes sparkleFly {
+            0% {
+                transform: scale(0.2) translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5) translateY(-50px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heart-bg" id="heartBg"></div>
+
+    <div class="card">
+        <div class="hero-image">
+            <div class="image-frame">
+                <img src="D:\Reham\reri.jpeg" alt="صورة حبيبتي" id="userImage">
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="greeting">
+                <h6>✨من الباشمهندس: ابراهيم ✨</h6>
+                <h6 style="color: #ff0057;">الى أميرتي </h6>
+                <h6>✨ دكتوره: رهام ✨</h6>
+            </div>
+            <div class="congrats">
+                <i class="fas fa-graduation-cap"></i> ألف مبروك نهاية امتحاناتك <i class="fas fa-star"></i>
+            </div>
+            <div class="message">
+                <i class="fas fa-quote-right"></i> اليوم ليس مجرد نهاية امتحانات…
+                اليوم نهاية مرحلة تعب وجهد ومثابره، وبداية نجاحك الحقيقي ✨
+
+                كنتِ قوية، صبورة 💖
+
+                ألف مبروك يا ست الناس و ست روحي وملكة جمال قلبي, أنا فخور فيك جدًا 🌹 <i class="fas fa-heart"
+                    style="color:#ee6a3b;"></i> ولي الشرف أن اكون جزء من حياتك وزوجك قريباً باذن الله
+            </div>
+
+            <div class="gift-box">
+                <div style="font-size: 14px; margin: 6px 0;">💍✨</div>
+                <p style="font-size: 15px; color: #ff0057;">هذا الخاتم هدية بسيطة من قلبي. أتمنى أن ينال إعجابك ♥️</p>
+            </div>
+
+            <div class="engagement-promise">
+                <i class="fas fa-hand-holding-heart"></i> و ان شاء الله أهديكِ دبلة زواجنا قريباً بإذن الله <i
+                    class="fas fa-heart" style="color:#e65c1e;"></i>
+            </div>
+        </div>
+        <div class="footer-note">
+            <i class="fas fa-infinity"></i> أحبك إلى الأبد — مبارك نجاحك يا حلم عمري و دعوتي المستجابه
+        </div>
+    </div>
+</body>
+
+</html>
