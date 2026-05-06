@@ -27,17 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* تأثير قلوب خفيفة في الخلفية */
-        .heart-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .heart-bg i {
             position: absolute;
             color: rgba(255, 160, 122, 0.15);
@@ -45,17 +34,7 @@
             animation: floatHeart 12s infinite linear;
         }
 
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0.6;
-            }
 
-            100% {
-                transform: translateY(-20vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
 
         /* البطاقة الرئيسية */
         .card {
@@ -71,17 +50,6 @@
             animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         /* رأس البطاقة (صورة الحبيبة) */
         .hero-image {
@@ -114,18 +82,6 @@
             background: #fff;
         }
 
-
-        @keyframes gentleBounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-7px);
-            }
-        }
 
         /* محتوى الرسائل */
         .content {
@@ -227,29 +183,7 @@
             color: #ffa047;
         }
 
-        .btn-sparkle {
-            background: #eb8c4a;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 80px;
-            font-family: 'Tajawal', sans-serif;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: white;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 8px 18px rgba(235, 140, 74, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .btn-sparkle:hover {
-            background: #da7836;
-            transform: scale(1.02);
-            box-shadow: 0 12px 24px rgba(235, 140, 74, 0.4);
-        }
+    
 
         /* تذييل خفيف */
         .footer-note {
@@ -282,30 +216,6 @@
             }
         }
 
-        /* شرارة صغيرة */
-        .sparkle {
-            position: fixed;
-            pointer-events: none;
-            background: radial-gradient(circle, gold, orange);
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: sparkleFly 0.8s forwards;
-            z-index: 9999;
-        }
-
-        @keyframes sparkleFly {
-            0% {
-                transform: scale(0.2) translateY(0);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1.5) translateY(-50px);
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 
